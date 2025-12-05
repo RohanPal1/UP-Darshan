@@ -1,0 +1,124 @@
+.bottom-nav {
+    position: fixed;
+    bottom: 30px;
+    width: calc(100% - 80px);
+    /* 20px margin on both sides */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f59e0b;
+    border-radius: 999px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+    z-index: 10;
+    height: 60px;
+    padding-bottom: calc(env(safe-area-inset-bottom, 0) + 10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+.nav-btn-icon {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-btn-icon img {
+    width: 20px;
+    height: 20px;
+    filter: invert(1);
+}
+
+.nav-btn-icon.active {
+    background-color: white;
+}
+
+.nav-btn-icon.active img {
+    filter: invert(16%) sepia(89%) saturate(2881%) hue-rotate(327deg) brightness(91%) contrast(90%);
+}
+
+.nav-scan-btn {
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    border: 3px solid teal;
+    border-radius: 50%;
+    margin-top: -60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    z-index: 11;
+    margin-bottom: -60px;
+}
+
+.nav-scan-btn svg {
+    width: 50px;
+    height: 45px;
+    filter: none;
+}
+
+
+@media (min-width: 768px) {
+    .bottom-nav {
+        bottom: 20px;
+    }
+}
+
+
+/* CSS for QR Code Scanner  */
+
+/* QR Scanner Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.qr-modal {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+}
+
+.qr-modal-content {
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #333;
+}
+
+@media (max-height: 768px) {
+
+    .bottom-nav {
+        bottom: 10px;
+    }
+}
+
+/* CSS for QR Code Scanner  */

@@ -1,0 +1,224 @@
+/* Base Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.feedback-page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.feedback-header {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    height: 150px;
+    background-color: #00695c;
+    color: white;
+    font-size: 20px;
+    gap: 10px;
+}
+
+.feedback-header-bg {
+    position: absolute;
+    left: 50%;
+}
+
+.back-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    z-index: 2;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.left-btn {
+    left: 10px;
+}
+
+/* Card */
+.feedback-card {
+    flex: 1;
+    overflow-y: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    padding-bottom: 90px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px 20px 140px 20px;
+    border: 1px solid #FFA500;
+    display: flex;
+    flex-direction: column;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+.navigation-menu-wrapper {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.feedback-card h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form */
+.feedback-form .form-group {
+    margin-bottom: 16px;
+}
+
+.feedback-form label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: #666;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #FFA500;
+    border-radius: 6px;
+    outline: none;
+}
+
+.feedback-form textarea {
+    resize: none;
+}
+
+.floating-label {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.floating-label .suggestion {
+    margin-bottom: 0px;
+}
+
+.floating-label input,
+.floating-label textarea {
+    width: 100%;
+    padding: 16px 12px 8px 12px;
+    font-size: 14px;
+    border: 1px solid #FFA500;
+    border-radius: 6px;
+    outline: none;
+    background: transparent;
+}
+
+.floating-label label {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: white;
+    padding: 0 4px;
+    font-size: 14px;
+    color: #999;
+    transition: 0.2s ease all;
+    pointer-events: none;
+}
+
+/* When input is focused or filled */
+.floating-label input:focus+label,
+.floating-label input:not(:placeholder-shown)+label,
+.floating-label textarea:focus+label,
+.floating-label textarea:not(:placeholder-shown)+label {
+    top: -8px;
+    left: 10px;
+    font-size: 12px;
+    color: #FFA500;
+}
+
+/* Prevent placeholder clash */
+.floating-label input::placeholder,
+.floating-label textarea::placeholder {
+    color: transparent;
+}
+
+
+/* Star Rating */
+.star-rating {
+    display: flex;
+    justify-content: start;
+    margin: 6px 0px 8px 0px;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star {
+    cursor: pointer;
+    transition: color 200ms;
+}
+
+/* Submit Button */
+.submit-btn {
+    background-color: #FFA500;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-btn svg {
+    font-size: 25px;
+}
+
+.submit-btn:hover {
+    background-color: #e69500;
+}
+
+/* Responsive: Tablet */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .feedback-card {
+        padding: 32px;
+    }
+
+    .feedback-form input,
+    .feedback-form textarea {
+        font-size: 15px;
+    }
+
+    .submit-btn {
+        font-size: 17px;
+    }
+}
+
+/* Responsive: Desktop */
+@media (min-width: 1025px) {
+
+
+    .feedback-card {
+        padding: 40px;
+    }
+
+    .feedback-header {
+        font-size: 24px;
+    }
+}

@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+}
+
+ul {
+    padding: 30px;
+}
+
+.settings-page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+}
+
+.settings-header {
+    position: relative;
+    background-color: #00695c;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 20px;
+}
+
+.bg-image {
+    position: absolute;
+    left: 40%;
+}
+
+.back-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    z-index: 2;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.left-btn {
+    left: 10px;
+}
+
+
+.gear-icon {
+    margin-right: 8px;
+}
+
+.settings-list {
+    flex: 1;
+    overflow-y: auto;
+    background-color: #fff;
+    list-style: none;
+    padding: 10px 20px;
+    margin-bottom: 60px;
+    /* Reserve space for Navigation_Menu height */
+}
+
+
+.settings-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    padding: 5px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.settings-item.selected {
+    background-color: #f3f3f3;
+}
+
+.settings-item:hover {
+    background-color: #f9f9f9;
+}
+
+.right-arrow {
+    color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    height: 45px;
+    width: 45px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .settings-header {
+        font-size: 18px;
+        padding: 20px;
+        height: 180px;
+    }
+
+    .settings-item {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .settings-header {
+        padding: 20px;
+        font-size: 22px;
+    }
+
+    .settings-item {
+        padding: 18px 20px;
+        font-size: 17px;
+    }
+}
+
+
+@media (min-width: 1025px) {
+    .settings-page {
+        max-width: 100%;
+        margin: 0 auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .settings-header {
+        padding: 24px;
+        font-size: 24px;
+    }
+
+    .settings-item {
+        padding: 20px 24px;
+        font-size: 18px;
+    }
+}

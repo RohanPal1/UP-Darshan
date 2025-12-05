@@ -1,0 +1,268 @@
+/* Base layout */
+* {
+    box-sizing: border-box;
+}
+
+body, html, #root {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.map-main-content-product-page {
+    flex: 1;
+    overflow-y: auto;
+    padding-top: 70px;
+    /* height of fixed Header */
+    padding-bottom: 130px;
+    /* height of fixed Bottom Nav */
+}
+
+.heritage-card {
+    width: 100%;
+    max-width: 440px;
+    margin: auto;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-image-tajmahal {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    max-height: 430px;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+
+.nav-button {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    z-index: 2;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.left-btn {
+    left: 10px;
+
+}
+
+.right-btn {
+    right: 10px;
+}
+
+.title-overlay {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 15px 20px;
+    font-size: 16px;
+    z-index: 2;
+    text-align: left;
+}
+
+/* CSS for Scrolling Tabing Sections  */
+
+
+
+.chapter-scroll-container {
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.chapter-scroll-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chapter-scroll-container::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+.chapter-scroll-container::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+/* CSS for Scrolling Tabing Sections  */
+
+.bottom-section-product-page {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    padding-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .bottom-section-product-page {
+        gap: 5rem;
+        padding-bottom: 1rem;
+    }
+
+    .heritage-card {
+        height: 100vh;
+        width: 100vw;
+        max-width: none;
+        border-radius: 0;
+        box-shadow: none;
+        flex-direction: column;
+    }
+
+    .header-image-tajmahal {
+        height: 45vh;
+        border-radius: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .bottom-section-product-page {
+        gap: 5rem;
+    }
+}
+
+
+/* CSS for Music and Description Tabing Section*/
+
+
+.chapter-tabs-container {
+    max-width: 100%;
+    font-family: "Poppins", sans-serif;
+    height: 330px;
+}
+
+/* Tabs */
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 10px 20px;
+    border: none;
+    background-color: #f4f4f4;
+    font-weight: 600;
+    color: #555;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tab-button.active {
+    background-color: #0c7b5c;
+    color: white;
+}
+
+.tab-button:hover:not(.active) {
+    background-color: #e0e0e0;
+}
+
+/* Chapters */
+.chapter-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: 280px;
+}
+
+.chapter-card {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 2px solid #c4e3d2;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.chapter-card-link {
+    color: black;
+    text-decoration: none;
+}
+
+.chapter-image {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.chapter-details {
+    flex-grow: 1;
+}
+
+.chapter-title {
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0;
+}
+
+.chapter-subtitle {
+    font-size: 0.85rem;
+    color: #888;
+    padding: 0;
+    margin: 0;
+}
+
+.chapter-meta {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #888;
+
+}
+
+.chapter-meta svg {
+    margin-right: 5px;
+    color: orange;
+}
+
+.download-icon {
+    color: #0c7b5c;
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+
+/* Description Tab */
+/* .description-tab {
+    text-align: center;
+    color: #666;
+    padding: 20px;
+    font-size: 0.95rem;
+} */
+
+
+/* CSS for Music and Description Tabing Section*/

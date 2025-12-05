@@ -1,0 +1,354 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /* Avoid double scroll */
+}
+
+.homepage-container {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.main-content {
+    flex: 1;
+    /* overflow-y: auto; */
+    padding-bottom: 80px;
+    /* Enough space for nav + floating QR */
+    box-sizing: border-box;
+}
+
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+    .main-content {
+        padding-bottom: calc(100px + env(safe-area-inset-bottom));
+    }
+}
+
+.header-container {
+    width: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+/* Middle Swiper area adjusts dynamically */
+.middle-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+
+.search-bar {
+    position: relative;
+    margin: 70px 0px 10px 0px;
+    width: 100%;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 12px 16px 12px 50px;
+    border-radius: 25px;
+    border: 1px solid #eee;
+    background-color: #fffcf5;
+    font-size: 15px;
+    font-size: inherit;
+    box-sizing: border-box;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    font-size: 22px;
+    font-size: inherit;
+    color: #5a5a5a;
+}
+
+.taglines h2 {
+    margin: 0;
+    font-size: 18px;
+    font-size: inherit;
+    color: #222;
+    font-weight: 600;
+}
+
+.taglines p {
+    margin: 4px 0 0;
+    font-size: 14px;
+    font-size: inherit;
+    color: #444;
+}
+
+.taglines p span {
+    color: #006e5f;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+
+    .taglines h2 {
+        font-size: 15px;
+        font-size: inherit;
+    }
+
+    .taglines p {
+        font-size: 14px;
+        font-size: inherit;
+    }
+}
+
+
+
+/* CSS for Places Avatar sliding from right to left */
+
+.avatar-slider-wrapper {
+    flex-shrink: 0;
+    padding: 8px 0;
+    overflow: hidden;
+    height: 70px;
+}
+
+.avatar-slider .swiper-slide {
+    width: auto !important;
+}
+
+.avatar-item {
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-radius: 999px;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.avatar-item.active {
+    background-color: #006e5f;
+    color: #fff;
+}
+
+.avatar-item.active .avatar-name {
+    color: white;
+}
+
+.avatar-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    border: 2px solid white;
+    flex-shrink: 0;
+}
+
+.avatar-name {
+    font-weight: 500;
+    font-size: 14px;
+    font-size: inherit;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .avatar-name {
+        font-size: 13px;
+        font-size: inherit;
+    }
+
+    .avatar-image {
+        width: 40px;
+        height: 40px;
+    }
+
+    .avatar-item {
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .avatar-name {
+        font-size: 14px;
+        font-size: inherit;
+    }
+
+    .avatar-item {
+        padding: 4px 8px;
+    }
+}
+
+/* CSS for Places Avatar sliding from right to left */
+
+
+/* CSS for Images Slider */
+
+.Swiper-slider-container {
+    flex: 1;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 8px;
+}
+
+/* .Swiper-slider-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 0;
+    margin-bottom: 40px;
+
+} */
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 260px;
+    height: 320px;
+    border-radius: 20px;
+    overflow: hidden;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+.swiper-wrapper {
+    transition-timing-function: ease-in-out;
+}
+
+.card {
+    position: relative;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    font-size: 16px;
+    font-size: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.arrow {
+    background: rgba(255, 255, 255, 0.3);
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+
+}
+
+.arrow svg {
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    margin-top: 7px;
+    rotate: -40deg;
+}
+
+.swiper-pagination {
+    position: relative;
+    text-align: center;
+    transition: 300ms opacity;
+    transform: translate3d(0, 0, 0);
+    z-index: 10;
+    margin-top: 20px;
+}
+
+.bottom-nav-wrapper {
+    position: fixed;
+    bottom: 20px;
+    height: 70px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    right: 0;
+    z-index: 9999;
+    pointer-events: auto;
+}
+
+
+/* .bottom-nav-wrapper {
+    height: 70px;
+    width: 100%;
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    flex-shrink: 0;
+} */
+
+@media (min-width: 1024px) {
+    .bottom-nav-wrapper {
+        height: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .swiper-slide {
+        width: 280px;
+        height: 360px;
+    }
+}
+
+@media (min-height: 843px) {
+    .swiper-slide {
+        width: 280px;
+        height: 420px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .Swiper-slider-container {
+        padding-top: 10px;
+        margin: 0;
+    }
+}
+
+@media (min-width: 769px) {
+    .Swiper-slider-container {
+        padding-top: 20px;
+    }
+}
+
+/* @media (min-height: 700px) {
+    .swiper-slide {
+        height: 380px;
+    }
+} */
+
+@media (max-height: 700px) {
+    .main-content {
+        padding-bottom: 60px;
+        /* more space on small-height screens */
+    }
+
+    .bottom-navigation {
+        height: 70px;
+    }
+}
+
+.swiper-coverflow {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}

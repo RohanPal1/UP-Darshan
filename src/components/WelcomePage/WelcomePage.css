@@ -1,0 +1,28 @@
+/* .internal-container-landing {
+    background-color: #00897B;
+} */
+
+.internal-container-landing {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* Optional, prevents vertical overflow */
+    overflow: hidden;
+}
+
+.Logo-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Perfectly centers */
+    width: 200px;
+    /* Adjust size as needed */
+    height: 200px;
+}
+
+.background-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}

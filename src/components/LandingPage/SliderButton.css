@@ -1,0 +1,119 @@
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: auto;
+    height: 70px;
+    border-radius: 30px;
+    overflow: hidden;
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: pan-y;
+}
+
+.track {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.23);
+    border-radius: 30px;
+}
+
+.arrow-track {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    color: #ffffff;
+    pointer-events: none;
+    display: flex;
+    gap: 6px;
+}
+
+.arrow-track svg {
+    opacity: 0;
+    transform: translateX(0);
+    animation: arrowSlideRight 1.5s ease-in-out infinite;
+}
+
+.arrow-track svg:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.arrow-track svg:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.arrow-track svg:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes arrowSlideRight {
+    0% {
+        opacity: 0;
+        transform: translateX(0);
+    }
+
+    30% {
+        opacity: 1;
+        transform: translateX(8px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(16px);
+    }
+}
+
+
+.get-started-text {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    background: #F9A825;
+    padding: 8px 16px;
+    border-radius: 30px;
+    transition: background 0.3s ease;
+    z-index: 1;
+}
+
+.get-started-text.active {
+    background: green;
+}
+
+.slider-button {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    top: 10px;
+    width: 50px;
+    height: 50px;
+    background: #F9A825;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: none;
+    transition: background 0.3s ease, left 0.1s ease;
+    z-index: 2;
+}
+
+.slider-button.completed {
+    background: green;
+}

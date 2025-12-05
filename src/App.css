@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+}
+
+.app-wrapper {
+  transition: font-size 0.3s ease;
+}
+
+body, html {
+  overflow-x: hidden;
+}
